@@ -26,11 +26,11 @@ class ModalComponent extends Component {
 	        		onRequestClose={this.handleClose}
 	        	>
 
-	        		<Container style={{margin: 15, marginBottom: 0, backgroundColor: '#fff'}}>
-	        			<Header style={{backgroundColor: '#009387' }}>
+	        		<Container style={{margin: 0, marginBottom: 0, backgroundColor: '#fff'}}>
+	        			<Header style={{backgroundColor: 'black' }}>
 	        				<Left>
 	        					<Button onPress={this.handleClose} transparent>
-	        						<Icon name="close" style={{color:'white', fontSize: 24}}/>
+	        						<Icon name="close" style={{color:'white', fontSize: 25, marginTop: 0}}/>
 	        					</Button>
 	        				</Left>
 	        				<Body>

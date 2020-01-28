@@ -18,7 +18,7 @@ export default class TabsExample extends Component {
 
     this.state = {
       isLoading: true,
-      data: null,
+      data: [],
       setModalVisible: false,
       modalArticleData: {},
       query: 'bitcoin',
@@ -72,13 +72,8 @@ export default class TabsExample extends Component {
   _resetValue() {
     this.setState({
         isLoading: true,
-        data: null
+        data: []
       });
-  }
-
-
-  home() {
-    Actions.Main()
   }
 
   category() {
@@ -98,6 +93,11 @@ export default class TabsExample extends Component {
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 350}}>
         <ActivityIndicator animating={this.state.isLoading}/>
         <Text style={{marginTop: 10}}>Please Wait...</Text>
+        <Text>Or Start Searching...</Text>
+      </View>
+    ) : this.state.data.length === 0 ? (
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <Text style={{fontSize: 50, fontStyle: "italic", fontFamily: "Helvetica Neue"}}>No Results...</Text>
       </View>
     ) : (
       <List
@@ -127,7 +127,7 @@ export default class TabsExample extends Component {
         
 
           
-            <Content>
+            <Content style={{marginTop: 20}}>
               {view}
             </Content>
           
@@ -139,9 +139,6 @@ export default class TabsExample extends Component {
     
             <Footer >
                 <FooterTab>
-                    <Button onPress={this.home}>
-                        <Icon name='ios-home' />
-                    </Button>
                     <Button onPress={this.trending}>
                         <Icon name='ios-trending-up' />
                     </Button>

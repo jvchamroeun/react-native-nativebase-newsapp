@@ -49,10 +49,6 @@ export default class TabsExample extends Component {
     )
   }
 
-  home() {
-    Actions.Main()
-  }
-
   category() {
     Actions.Category()
   }
@@ -86,7 +82,7 @@ export default class TabsExample extends Component {
     return (
         <Container>
           <Container>
-            <Content>
+            <Content style={{marginTop: 20}}>
               {view}
             </Content>
           </Container>
@@ -99,9 +95,6 @@ export default class TabsExample extends Component {
     
             <Footer >
                 <FooterTab>
-                    <Button onPress={this.home}>
-                        <Icon name='ios-home' />
-                    </Button>
                     <Button active>
                         <Icon name='ios-trending-up' />
                     </Button>

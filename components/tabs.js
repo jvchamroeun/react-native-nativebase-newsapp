@@ -11,10 +11,6 @@ export default class TabsExample extends Component {
     Actions.Trending()
   }
 
-  category() {
-    Actions.Category()
-  }
-
   search() {
     Actions.Search()
   }
@@ -36,9 +32,6 @@ export default class TabsExample extends Component {
         <Content theme={theme} />
         <Footer >
             <FooterTab>
-                <Button active>
-                    <Icon name='ios-home' />
-                </Button>
                 <Button onPress={this.trending}>
                     <Icon name='ios-trending-up' />
                 </Button>
